@@ -18,7 +18,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest e2e"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
@@ -27,6 +27,7 @@
     "@nestjs/mongoose": "^7.0.1",
     "@nestjs/platform-express": "^7.0.0",
     "apollo-server-express": "^2.13.1",
+    "axios": "^0.19.2",
     "class-validator": "^0.12.2",
     "graphql": "^15.0.0",
     "graphql-tools": "^5.0.0",
@@ -64,11 +65,13 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
-    "testRegex": ".spec.ts$",
+    "rootDir": ".",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
+    "testMatch": [
+      "<rootDir>/test/**/*spec.(js|jsx|ts|tsx)"
+    ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }

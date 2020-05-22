@@ -11,6 +11,7 @@ type UserType {
 
 type Query {
   users: [UserType!]!
+  getUser(id: String!): UserType!
 }
 
 type Mutation {
